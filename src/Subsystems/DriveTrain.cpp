@@ -67,11 +67,11 @@ void DriveTrain::arcadeDrive(float moveValue, float rotateValue)
         }
     }
 
-    float limitedL = Drive::Limit(leftMotorOutput, 1.0);
-    float limitedR = -Drive::Limit(rightMotorOutput, 1.0);
+    float limitedL = DriveTrain::Limit(leftMotorOutput, 1.0);
+    float limitedR = -DriveTrain::Limit(rightMotorOutput, 1.0);
 
-    left->Set(-limitedL);
-    right->Set(-limitedR);
+    leftMotor->Set(-limitedL);
+    rightMotor->Set(-limitedR);
 }
 
 float DriveTrain::Limit(float num, float max)

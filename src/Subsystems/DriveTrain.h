@@ -8,7 +8,7 @@
 #ifndef SRC_SUBSYSTEMS_DRIVETRAIN_H_
 #define SRC_SUBSYSTEMS_DRIVETRAIN_H_
 
-class DriveTrain {
+class DriveTrain: public Subsystem {
 public:
 	DriveTrain();
 	virtual ~DriveTrain();
