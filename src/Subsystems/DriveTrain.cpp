@@ -8,9 +8,10 @@
 #include <Subsystems/DriveTrain.h>
 
 #define max(x, y) (((x) > (y)) ? (x) : (y))
+
 DriveTrain::DriveTrain() :
-	Subsystem("DriveTrain"), leftMotor(new Jaguar(MOTORLEFT)),
-	rightMotor(new Jaguar(MOTORRIGHT)), mult(1.0)
+	Subsystem("DriveTrain"), leftMotor(new Talon(MOTORLEFT)),
+	rightMotor(new Talon(MOTORRIGHT))
 {
 
 
@@ -19,16 +20,6 @@ DriveTrain::DriveTrain() :
 DriveTrain::~DriveTrain()
 {
 	// TODO Auto-generated destructor stub
-}
-
-void DriveTrain::setMult(float m)
-{
-    mult = m;
-}
-
-int DriveTrain::getMult()
-{
-	return mult;
 }
 
 void DriveTrain::arcadeDrive(float moveValue, float rotateValue)

@@ -14,13 +14,11 @@ public:
 	virtual ~DriveTrain();
 	void arcadeDrive(float move, float rotate);
 	static float Limit(float num, float max);
-	void setMult(float m);
-	        int getMult();
+
 
 private:
-	Jaguar* leftMotor;
-	Jaguar* rightMotor;
-	float mult;
+	Talon* leftMotor;
+	Talon* rightMotor;
 };
 
 #endif /* SRC_SUBSYSTEMS_DRIVETRAIN_H_ */

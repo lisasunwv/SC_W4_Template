@@ -1,6 +1,6 @@
 #include "WPILib.h"
 #include "Commands/Command.h"
-#include "Commands/ExampleCommand.h"
+//#include "Commands/ExampleCommand.h"
 #include "CommandBase.h"
 
 class Robot: public IterativeRobot
@@ -12,10 +12,7 @@ private:
 	void RobotInit()
 	{
 		CommandBase::init();
-		chooser = new SendableChooser();
-		chooser->AddDefault("Default Auto", new ExampleCommand());
-		//chooser->AddObject("My Auto", new MyAutoCommand());
-		SmartDashboard::PutData("Auto Modes", chooser);
+
 	}
 
 	/**
@@ -49,11 +46,12 @@ private:
 		} else {
 			autonomousCommand.reset(new ExampleCommand());
 		} */
-
+		/*
 		autonomousCommand.reset((Command *)chooser->GetSelected());
 
 		if (autonomousCommand != NULL)
 			autonomousCommand->Start();
+			*/
 	}
 
 	void AutonomousPeriodic()
@@ -67,8 +65,8 @@ private:
 		// teleop starts running. If you want the autonomous to
 		// continue until interrupted by another command, remove
 		// this line or comment it out.
-		if (autonomousCommand != NULL)
-			autonomousCommand->Cancel();
+		//if (autonomousCommand != NULL)
+		//	autonomousCommand->Cancel();
 	}
 
 	void TeleopPeriodic()
