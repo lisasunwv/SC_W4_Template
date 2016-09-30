@@ -6,6 +6,7 @@
  */
 
 #include <Subsystems/DriveTrain.h>
+#include "Commands/arcadeDrive.h"
 
 #define max(x, y) (((x) > (y)) ? (x) : (y))
 
@@ -74,4 +75,9 @@ float DriveTrain::Limit(float num, float max)
         return -max;
 
     return num;
+}
+
+void DriveTrain::InitDefaultCommand(){
+	SetDefaultCommand(new ArcadeDrive());
+
 }

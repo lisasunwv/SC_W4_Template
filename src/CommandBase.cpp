@@ -23,4 +23,6 @@ void CommandBase::init()
 	// line should be repeated for each subsystem in the project.
 	drive = new DriveTrain();
 	oi = new OI();
+	shooter = new Shooter();
+	intake = new Intake();
 }
