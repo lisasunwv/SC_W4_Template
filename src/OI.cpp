@@ -2,7 +2,7 @@
 #include "RobotMap.h"
 
 OI::OI()
-:driveStick(new Joystick(JOYSTICK)) //JOYSTICK = constant 0
+:driveStick(new Joystick(JORSTICK_PORT)) //JOYSTICK = constant 0
 {
 	// Process operator interface input here.
 	Button* intakeBallButton = new JoystickButton(driveStick,1);
@@ -12,7 +12,7 @@ OI::OI()
 	intakeBallButton ->WhenReleased(new StopAcquirer());
 
 	shootBallButton ->WhenPressed(new ShootBall());
-	shootBallButton ->WhenReleased(new StopAcquirer());
+	shootBallButton ->WhenReleased(new BrakeShooter());
 
 
 }

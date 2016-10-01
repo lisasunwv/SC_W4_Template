@@ -7,7 +7,13 @@
 const int MOTORLEFT = 0;
 const int MOTORRIGHT = 0;
 
-const int JOYSTICK = 0;
+const uint32_t  JORSTICK_PORT=0;
+
+
+const uint32_t SHOOTER_MOTOR1=2;
+const uint32_t SHOOTER_MOTOR2=3;
+const uint32_t INTAKE_MOTOR=4;
+
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
